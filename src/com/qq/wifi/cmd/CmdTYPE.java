@@ -22,8 +22,6 @@ package com.qq.wifi.cmd;
 
 import com.qq.wifi.foregin.SessionThread;
 
-import android.util.Log;
-
 public class CmdTYPE extends FtpCmd implements Runnable {
 	String input;
 	
@@ -32,6 +30,7 @@ public class CmdTYPE extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		String output;
 		//myLog.l(Log.DEBUG, "TYPE executing");

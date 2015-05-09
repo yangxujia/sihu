@@ -22,8 +22,6 @@ package com.qq.wifi.cmd;
 
 import com.qq.wifi.foregin.SessionThread;
 
-import android.util.Log;
-
 public class CmdSYST extends FtpCmd implements Runnable {
 	// This is considered a safe response to the SYST command, see
 	// http://cr.yp.to/ftp/syst.html
@@ -34,6 +32,7 @@ public class CmdSYST extends FtpCmd implements Runnable {
 	}
 	
 	
+	@Override
 	public void run() {
 		//myLog.l(Log.DEBUG, "SYST executing");
 		sessionThread.writeString(response);

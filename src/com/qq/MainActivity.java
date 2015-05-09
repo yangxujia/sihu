@@ -2,10 +2,8 @@ package com.qq;
 
 import com.qq.activity.LoginActivity;
 import com.qq.fragment.ConstactFatherFragment;
-import com.qq.fragment.ConstactFragment;
 import com.qq.fragment.DynamicFragment;
 import com.qq.fragment.NewsFatherFragment;
-import com.qq.fragment.NewsFragment;
 import com.qq.fragment.SettingFragment;
 
 import android.os.Bundle;

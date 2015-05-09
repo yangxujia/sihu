@@ -17,7 +17,6 @@ import com.qq.sort.SideBar;
 import com.qq.sort.SortModel;
 import com.qq.sort.SideBar.OnTouchingLetterChangedListener;
 import com.qq.test.TestData;
-import com.qq.util.ConstactUtil;
 import com.qq.view.CustomListView;
 import com.qq.view.CustomListView.OnRefreshListener;
 import com.qq.view.LoadingView;

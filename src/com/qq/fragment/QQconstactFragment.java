@@ -10,8 +10,6 @@ import com.qq.bean.RecentChat;
 import com.qq.test.TestData;
 import com.qq.view.CustomListView;
 import com.qq.view.LoadingView;
-import com.qq.view.TitleBarView;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

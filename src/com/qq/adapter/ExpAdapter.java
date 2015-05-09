@@ -3,8 +3,6 @@ package com.qq.adapter;
 import java.lang.ref.SoftReference;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import com.qq.R;
 import com.qq.bean.RecentChat;
 import com.qq.util.FileUtil;
@@ -16,13 +14,10 @@ import com.qq.view.IphoneTreeView.IphoneTreeHeaderAdapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -89,34 +84,42 @@ public class ExpAdapter extends BaseExpandableListAdapter implements
 		mSearchView = searchView;
 	}
 
+	@Override
 	public Object getChild(int groupPosition, int childPosition) {
 		return children[groupPosition][childPosition];
 	}
 
+	@Override
 	public long getChildId(int groupPosition, int childPosition) {
 		return childPosition;
 	}
 
+	@Override
 	public int getChildrenCount(int groupPosition) {
 		return children[groupPosition].length;
 	}
 
+	@Override
 	public Object getGroup(int groupPosition) {
 		return groups[groupPosition];
 	}
 
+	@Override
 	public int getGroupCount() {
 		return groups.length;
 	}
 
+	@Override
 	public long getGroupId(int groupPosition) {
 		return groupPosition;
 	}
 
+	@Override
 	public boolean isChildSelectable(int groupPosition, int childPosition) {
 		return true;
 	}
 
+	@Override
 	public boolean hasStableIds() {
 		return true;
 	}

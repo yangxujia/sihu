@@ -23,10 +23,6 @@ import java.net.InetAddress;
 
 import com.qq.wifi.foregin.SessionThread;
 
-
-
-import android.util.Log;
-
 public class CmdPASV extends FtpCmd implements Runnable {
 	//public static final String message = "TEMPLATE!!";
 	
@@ -34,6 +30,7 @@ public class CmdPASV extends FtpCmd implements Runnable {
 		super(sessionThread, CmdPASV.class.toString());
 	}
 	
+	@Override
 	public void run() {
 		String cantOpen = "502 Couldn't open a port\r\n";
 		//myLog.l(Log.DEBUG, "PASV running");

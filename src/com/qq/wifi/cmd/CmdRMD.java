@@ -23,9 +23,6 @@ import java.io.File;
 
 import com.qq.wifi.foregin.SessionThread;
 
-
-import android.util.Log;
-
 public class CmdRMD extends FtpCmd implements Runnable {
 	public static final String message = "TEMPLATE!!";
 	protected String input;
@@ -35,6 +32,7 @@ public class CmdRMD extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		//myLog.l(Log.INFO, "RMD executing");
 		String param = getParameter(input);

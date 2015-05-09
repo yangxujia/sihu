@@ -8,7 +8,6 @@ import java.io.InputStream;
 import com.qq.util.FileUtil;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 
 public class SDManager {
 	private Context mContext;

@@ -23,8 +23,6 @@ package com.qq.wifi.cmd;
 
 import com.qq.wifi.foregin.SessionThread;
 
-import android.util.Log;
-
 public class CmdFEAT extends FtpCmd implements Runnable {
 	public static final String message = "TEMPLATE!!"; 
 	
@@ -32,6 +30,7 @@ public class CmdFEAT extends FtpCmd implements Runnable {
 		super(sessionThread, CmdFEAT.class.toString());
 	}
 	
+	@Override
 	public void run() {
 		//sessionThread.writeString("211 No extended features\r\n");
 		sessionThread.writeString("211-Features supported\r\n");

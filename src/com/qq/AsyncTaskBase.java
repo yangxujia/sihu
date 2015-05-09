@@ -2,7 +2,6 @@ package com.qq;
 
 import com.qq.view.LoadingView;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.view.View;
 

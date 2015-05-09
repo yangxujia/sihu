@@ -31,6 +31,7 @@ public class CmdAPPE extends CmdAbstractStore implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		doStorOrAppe(getParameter(input), true);
 	}

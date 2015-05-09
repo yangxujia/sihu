@@ -22,8 +22,6 @@ package com.qq.wifi.cmd;
 
 import com.qq.wifi.foregin.SessionThread;
 
-import android.util.Log;
-
 public class CmdUSER extends FtpCmd implements Runnable {
 	protected String input;
 	
@@ -33,6 +31,7 @@ public class CmdUSER extends FtpCmd implements Runnable {
 		
 	}
 	
+	@Override
 	public void run() {
 		//myLog.l(Log.DEBUG, "USER executing");
 		String username = FtpCmd.getParameter(input);

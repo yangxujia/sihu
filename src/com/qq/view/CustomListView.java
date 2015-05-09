@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
@@ -152,7 +153,7 @@ public class CustomListView extends ListView implements OnScrollListener {
 	 * 
 	 */
 	private void addHeadView() {
-		mHeadView = (LinearLayout) mInflater.inflate(R.layout.refresh_head, null);
+		mHeadView = mInflater.inflate(R.layout.refresh_head, null);
 
 		mArrowImageView = (ImageView) mHeadView.findViewById(R.id.head_arrowImageView);
 		mArrowImageView.setMinimumWidth(70);
@@ -236,15 +237,15 @@ public class CustomListView extends ListView implements OnScrollListener {
 		Interpolator _Interpolator = new LinearInterpolator();
 		
 		mArrowAnim = new RotateAnimation(0, -180,
-				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
-				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+				Animation.RELATIVE_TO_SELF, 0.5f,
+				Animation.RELATIVE_TO_SELF, 0.5f);
 		mArrowAnim.setInterpolator(_Interpolator);
 		mArrowAnim.setDuration(_Duration);
 		mArrowAnim.setFillAfter(true);
 
 		mArrowReverseAnim = new RotateAnimation(-180, 0,
-				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
-				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+				Animation.RELATIVE_TO_SELF, 0.5f,
+				Animation.RELATIVE_TO_SELF, 0.5f);
 		mArrowReverseAnim.setInterpolator(_Interpolator);
 		mArrowReverseAnim.setDuration(_Duration);
 		mArrowReverseAnim.setFillAfter(true);
@@ -376,6 +377,7 @@ public class CustomListView extends ListView implements OnScrollListener {
 	/**
 	 *原作者的，我没改动，请读者自行优化。
 	 */
+	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		
 		if (mCanRefresh) {

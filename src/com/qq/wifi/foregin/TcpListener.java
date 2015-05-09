@@ -23,9 +23,6 @@ package com.qq.wifi.foregin;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
-import android.util.Log;
-
 public class TcpListener extends Thread {
 	ServerSocket listenSocket;
 	FTPServerService ftpServerService;
@@ -45,6 +42,7 @@ public class TcpListener extends Thread {
 		}
 	}
 	
+	@Override
 	public void run() {
 		try {
 			while(true) {

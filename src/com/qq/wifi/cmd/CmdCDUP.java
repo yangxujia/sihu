@@ -24,8 +24,6 @@ import java.io.IOException;
 
 import com.qq.wifi.foregin.SessionThread;
 
-import android.util.Log;
-
 public class CmdCDUP extends FtpCmd implements Runnable {
 	protected String input;
 	
@@ -33,6 +31,7 @@ public class CmdCDUP extends FtpCmd implements Runnable {
 		super(sessionThread, CmdCDUP.class.toString());
 	}
 	
+	@Override
 	public void run() {
 		//myLog.l(Log.DEBUG, "CDUP executing");
 		File newDir;

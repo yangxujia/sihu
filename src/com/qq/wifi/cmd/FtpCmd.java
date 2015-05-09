@@ -21,13 +21,8 @@ package com.qq.wifi.cmd;
 
 
 import java.io.File;
-import java.lang.reflect.Constructor;
-
 import com.qq.wifi.foregin.Globals;
 import com.qq.wifi.foregin.SessionThread;
-
-
-import android.util.Log;
 
 public abstract class FtpCmd implements Runnable {
 	protected SessionThread sessionThread;
@@ -99,6 +94,7 @@ public abstract class FtpCmd implements Runnable {
 		//myLog = new MyLog(logName);
 	}
 	
+	@Override
 	abstract public void run();
 	
 	public static void dispatchCommand(SessionThread session, 

@@ -6,7 +6,6 @@ import com.qq.R;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -45,6 +44,7 @@ public class SideBar extends View {
 	/**
 	 * 重写这个方法
 	 */
+	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		// 获取焦点改变背景颜色.

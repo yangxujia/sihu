@@ -30,9 +30,6 @@ import java.io.File;
 
 import com.qq.wifi.foregin.SessionThread;
 
-
-import android.util.Log;
-
 public abstract class CmdAbstractListing extends FtpCmd {
 	//protected static MyLog staticLog = new MyLog(CmdLIST.class.toString());
 	

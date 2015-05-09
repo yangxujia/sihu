@@ -45,7 +45,6 @@ import android.net.wifi.WifiManager;
 import android.net.wifi.WifiManager.WifiLock;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.util.Log;
 
 public class FTPServerService extends Service implements Runnable {
     protected static Thread serverThread = null;
@@ -108,12 +107,14 @@ public class FTPServerService extends Service implements Runnable {
     public FTPServerService() {
     }
 
-    public IBinder onBind(Intent intent) {
+    @Override
+	public IBinder onBind(Intent intent) {
         // We don't implement this functionality, so ignore it
         return null;
     }
 
-    public void onCreate() {
+    @Override
+	public void onCreate() {
         //myLog.l(Log.DEBUG, "SwiFTP server created");
         // Set the application-wide context global, if not already set
         Context myContext = Globals.getContext();
@@ -131,7 +132,8 @@ public class FTPServerService extends Service implements Runnable {
         return;
     }
 
-    public void onStart(Intent intent, int startId) {
+    @Override
+	public void onStart(Intent intent, int startId) {
         super.onStart(intent, startId);
 
         shouldExit = false;
@@ -169,7 +171,8 @@ public class FTPServerService extends Service implements Runnable {
         return true;
     }
 
-    public void onDestroy() {
+    @Override
+	public void onDestroy() {
        // myLog.l(Log.INFO, "onDestroy() Stopping server");
         shouldExit = true;
         if (serverThread == null) {
@@ -278,7 +281,8 @@ public class FTPServerService extends Service implements Runnable {
         return true;
     }
 
-    public void run() {
+    @Override
+	public void run() {
         // The UI will want to check the server status to update its
         // start/stop server button
         int consecutiveProxyStartFailures = 0;

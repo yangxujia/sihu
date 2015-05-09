@@ -36,7 +36,6 @@ import android.media.MediaScannerConnection;
 import android.media.MediaScannerConnection.MediaScannerConnectionClient;
 import android.net.Uri;
 import android.provider.Settings;
-import android.util.Log;
 
 abstract public class RemoteUtil {
 	public static String getAndroidId() {
@@ -151,11 +150,13 @@ abstract public class RemoteUtil {
 	        connection.connect();
 	    }
 
-	    public void onMediaScannerConnected() {
+	    @Override
+		public void onMediaScannerConnected() {
 	        connection.scanFile(path, null); // null: we don't know MIME type
 	    }
 
-	    public void onScanCompleted(String path, Uri uri) {
+	    @Override
+		public void onScanCompleted(String path, Uri uri) {
             connection.disconnect();
  	    }
 	}

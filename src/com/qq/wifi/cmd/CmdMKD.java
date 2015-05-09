@@ -23,9 +23,6 @@ import java.io.File;
 
 import com.qq.wifi.foregin.SessionThread;
 
-
-import android.util.Log;
-
 public class CmdMKD extends FtpCmd implements Runnable {
 	String input;
 	
@@ -34,6 +31,7 @@ public class CmdMKD extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		//myLog.l(Log.DEBUG, "MKD executing");
 		String param = getParameter(input);

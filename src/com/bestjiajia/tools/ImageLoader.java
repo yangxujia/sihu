@@ -199,6 +199,7 @@ public class ImageLoader {
 			photoToLoad = p;
 		}
 
+		@Override
 		public void run() {
 			if (imageViewReused(photoToLoad))
 				return;

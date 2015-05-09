@@ -35,8 +35,6 @@ import java.nio.ByteBuffer;
 import com.qq.util.RemoteUtil;
 import com.qq.wifi.cmd.FtpCmd;
 
-import android.util.Log;
-
 public class SessionThread extends Thread {
     protected boolean shouldExit = false;
     protected Socket cmdSocket;
@@ -248,7 +246,8 @@ public class SessionThread extends Thread {
     }
 
     static int numNulls = 0;
-    public void run() {
+    @Override
+	public void run() {
         //myLog.l(Log.INFO, "SessionThread started");
 
         if(sendWelcomeBanner) {

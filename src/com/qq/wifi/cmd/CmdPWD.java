@@ -25,9 +25,6 @@ import java.io.IOException;
 import com.qq.wifi.foregin.Globals;
 import com.qq.wifi.foregin.SessionThread;
 
-
-import android.util.Log;
-
 public class CmdPWD extends FtpCmd implements Runnable {
     // public static final String message = "TEMPLATE!!";
 
@@ -35,7 +32,8 @@ public class CmdPWD extends FtpCmd implements Runnable {
         super(sessionThread, CmdPWD.class.toString());
     }
 
-    public void run() {
+    @Override
+	public void run() {
         //myLog.l(Log.DEBUG, "PWD executing");
 
         // We assume that the chroot restriction has been applied, and that

@@ -27,9 +27,6 @@ import java.io.IOException;
 import com.qq.wifi.foregin.Defaults;
 import com.qq.wifi.foregin.SessionThread;
 
-
-import android.util.Log;
-
 public class CmdRETR extends FtpCmd implements Runnable {
 	//public static final String message = "TEMPLATE!!";
 	protected String input;
@@ -39,6 +36,7 @@ public class CmdRETR extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		//myLog.l(Log.DEBUG, "RETR executing");
 		String param = getParameter(input);

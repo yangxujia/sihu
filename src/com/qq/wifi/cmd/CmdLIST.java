@@ -33,9 +33,6 @@ import java.util.Locale;
 
 import com.qq.wifi.foregin.SessionThread;
 
-
-import android.util.Log;
-
 public class CmdLIST extends CmdAbstractListing implements Runnable {
 	// The approximate number of milliseconds in 6 months
 	public final static long MS_IN_SIX_MONTHS = 6 * 30 * 24 * 60 * 60 * 1000;
@@ -46,6 +43,7 @@ public class CmdLIST extends CmdAbstractListing implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		String errString = null;
 		
@@ -104,6 +102,7 @@ public class CmdLIST extends CmdAbstractListing implements Runnable {
 	
 	// Generates a line of a directory listing in the traditional /bin/ls
 	// format.
+	@Override
 	protected String makeLsString(File file) {
 		StringBuilder response = new StringBuilder();
 		

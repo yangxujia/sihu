@@ -25,9 +25,6 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
-import android.util.Log;
-
 public class NormalDataSocketFactory extends DataSocketFactory {
 	/**
 	 * This class implements normal, traditional opening and closing of data sockets
@@ -66,6 +63,7 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 		//myLog.l(Log.DEBUG, "NormalDataSocketFactory state cleared");
 	}
 	
+	@Override
 	public int onPasv() {
 		clearState();
 		try {
@@ -80,6 +78,7 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 		}
 	}
 
+	@Override
 	public boolean onPort(InetAddress remoteAddr, int remotePort) {
 		clearState();
 		this.remoteAddr = remoteAddr;
@@ -87,6 +86,7 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 		return true;
 	}
 	
+	@Override
 	public Socket onTransfer() {
 		if(server == null) {
 			// We're in PORT mode (not PASV)
@@ -144,11 +144,13 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 		}
 	}
 	
+	@Override
 	public InetAddress getPasvIp() {
 		//String retVal = server.getInetAddress().getHostAddress();
 		return FTPServerService.getWifiIp();
 	}
 	
+	@Override
 	public void reportTraffic(long bytes) {
 		// ignore, we don't care about how much traffic goes over wifi.
 	}

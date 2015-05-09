@@ -10,10 +10,8 @@ import java.util.concurrent.Executors;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
-import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 
 public class ImgUtil {
 	private static final String TAG = "LoadImageUtil";

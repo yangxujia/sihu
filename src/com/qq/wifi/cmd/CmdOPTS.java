@@ -33,6 +33,7 @@ public class CmdOPTS extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		String param = getParameter(input);
 		String errString = null;

@@ -34,9 +34,6 @@ import com.qq.wifi.foregin.Defaults;
 import com.qq.wifi.foregin.SessionThread;
 
 
-import android.util.Log;
-
-
 abstract public class CmdAbstractStore extends FtpCmd {
 	public static final String message = "TEMPLATE!!"; 
 	

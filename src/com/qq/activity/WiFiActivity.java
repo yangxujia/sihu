@@ -17,11 +17,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageView;
@@ -29,7 +26,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -46,7 +42,8 @@ public class WiFiActivity extends Activity {
 	    //protected MyLog myLog = new MyLog(this.getClass().getName());
 
 		public Handler handler = new Handler() {
-	        public void handleMessage(Message msg) {
+	        @Override
+			public void handleMessage(Message msg) {
 	            switch (msg.what) {
 	                case 0: // We are being told to do a UI update
 	                    // If more than one UI update is queued up, we only need to
@@ -122,7 +119,8 @@ public class WiFiActivity extends Activity {
 	        // quickly turn on or off wifi.
 	        findViewById(R.id.wifi_state_image).setOnClickListener(
 	                new OnClickListener() {
-	                    public void onClick(View v) {
+	                    @Override
+						public void onClick(View v) {
 	                        Intent intent = new Intent(
 	                                android.provider.Settings.ACTION_WIFI_SETTINGS);
 	                        startActivity(intent);
@@ -142,13 +140,15 @@ public class WiFiActivity extends Activity {
 	     * Whenever we regain focus, we should update the button text depending on
 	     * the state of the server service.
 	     */
-	    public void onStart() {
+	    @Override
+		public void onStart() {
 	        super.onStart();
 	        UiUpdater.registerClient(handler);
 	        updateUi();
 	    }
 
-	    public void onResume() {
+	    @Override
+		public void onResume() {
 	        super.onResume();
 
 	        UiUpdater.registerClient(handler);
@@ -165,19 +165,22 @@ public class WiFiActivity extends Activity {
 	     * Whenever we lose focus, we must unregister from UI update messages from
 	     * the FTPServerService, because we may be deallocated.
 	     */
-	    public void onPause() {
+	    @Override
+		public void onPause() {
 	        super.onPause();
 	        UiUpdater.unregisterClient(handler);
 	       // myLog.l(Log.DEBUG, "Unregistered for wifi updates");
 	        mActivity.unregisterReceiver(wifiReceiver);
 	    }
 
-	    public void onStop() {
+	    @Override
+		public void onStop() {
 	        super.onStop();
 	        UiUpdater.unregisterClient(handler);
 	    }
 
-	    public void onDestroy() {
+	    @Override
+		public void onDestroy() {
 	        super.onDestroy();
 	        UiUpdater.unregisterClient(handler);
 	    }
@@ -283,7 +286,8 @@ public class WiFiActivity extends Activity {
 	    }
 
 	    BroadcastReceiver wifiReceiver = new BroadcastReceiver() {
-	        public void onReceive(Context ctx, Intent intent) {
+	        @Override
+			public void onReceive(Context ctx, Intent intent) {
 	            //myLog.l(Log.DEBUG, "Wifi status broadcast received");
 	            updateUi();
 	        }
@@ -309,7 +313,7 @@ public class WiFiActivity extends Activity {
 	        if (settings != null) {
 	            return settings;
 	        } else {
-	            return mActivity.getPreferences(Activity.MODE_PRIVATE);
+	            return mActivity.getPreferences(Context.MODE_PRIVATE);
 	        }
 	    }
 }

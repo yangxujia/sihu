@@ -1,7 +1,6 @@
 package com.qq.util;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 import android.content.Context;

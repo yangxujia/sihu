@@ -30,18 +30,22 @@ public class SortAdapter extends BaseAdapter implements SectionIndexer{
 		notifyDataSetChanged();
 	}
 
+	@Override
 	public int getCount() {
 		return this.list.size();
 	}
 
+	@Override
 	public Object getItem(int position) {
 		return list.get(position);
 	}
 
+	@Override
 	public long getItemId(int position) {
 		return position;
 	}
 
+	@Override
 	public View getView(final int position, View view, ViewGroup arg2) {
 		ViewHolder viewHolder = null;
 		final SortModel mContent = list.get(position);
@@ -83,6 +87,7 @@ public class SortAdapter extends BaseAdapter implements SectionIndexer{
 	/**
 	 * 根据ListView的当前位置获取分类的首字母的Char ascii值
 	 */
+	@Override
 	public int getSectionForPosition(int position) {
 		return list.get(position).getSortLetters().charAt(0);
 	}
@@ -90,6 +95,7 @@ public class SortAdapter extends BaseAdapter implements SectionIndexer{
 	/**
 	 * 根据分类的首字母的Char ascii值获取其第一次出现该首字母的位置
 	 */
+	@Override
 	public int getPositionForSection(int section) {
 		for (int i = 0; i < getCount(); i++) {
 			String sortStr = list.get(i).getSortLetters();

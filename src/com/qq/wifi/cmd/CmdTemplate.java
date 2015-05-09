@@ -22,8 +22,6 @@ package com.qq.wifi.cmd;
 
 import com.qq.wifi.foregin.SessionThread;
 
-import android.util.Log;
-
 public class CmdTemplate extends FtpCmd implements Runnable {
 	public static final String message = "TEMPLATE!!"; 
 	
@@ -31,6 +29,7 @@ public class CmdTemplate extends FtpCmd implements Runnable {
 		super(sessionThread, CmdTemplate.class.toString());
 	}
 	
+	@Override
 	public void run() {
 		sessionThread.writeString(message);
 		//myLog.l(Log.INFO, "Template log message");

@@ -30,13 +30,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -294,6 +290,7 @@ public class ErcodeScanActivity extends Activity implements Callback{
 	 * When the beep has finished playing, rewind to queue up another one.
 	 */
 	private final OnCompletionListener beepListener = new OnCompletionListener() {
+		@Override
 		public void onCompletion(MediaPlayer mediaPlayer) {
 			mediaPlayer.seekTo(0);
 		}

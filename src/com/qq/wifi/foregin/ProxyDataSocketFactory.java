@@ -22,9 +22,6 @@ package com.qq.wifi.foregin;
 import java.net.InetAddress;
 import java.net.Socket;
 
-
-import android.util.Log;
-
 /**
  * @author david
  *
@@ -69,6 +66,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 		clientPort = 0;
 	}
 
+	@Override
 	public InetAddress getPasvIp() {
 		ProxyConnector pc = Globals.getProxyConnector();
 		if(pc == null) {
@@ -82,6 +80,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 //		return 0;
 //	}
 
+	@Override
 	public int onPasv() {
 		clearState();
 		proxyConnector = Globals.getProxyConnector();
@@ -101,6 +100,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 		return proxyListenPort;
 	}
 
+	@Override
 	public boolean onPort(InetAddress dest, int port) {
 		clearState();
 		proxyConnector = Globals.getProxyConnector();
@@ -120,6 +120,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 	 * can then be handed back to the SessionThread which can use it as
 	 * if it were directly connected to the client.
 	 */
+	@Override
 	public Socket onTransfer() {
 		if(proxyConnector == null) {
 			//myLog.w("Unexpected null proxyConnector in onTransfer");
@@ -146,6 +147,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
 		}
 	}
 	
+	@Override
 	public void reportTraffic(long bytes) {
 		ProxyConnector pc = Globals.getProxyConnector();
 		if(pc == null) {

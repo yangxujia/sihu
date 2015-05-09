@@ -1,8 +1,6 @@
 package com.qq.wifi.cmd;
 
 import java.io.File;
-import java.io.IOException;
-
 import com.qq.wifi.foregin.SessionThread;
 
 public class CmdSIZE extends FtpCmd {
@@ -13,6 +11,7 @@ public class CmdSIZE extends FtpCmd {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		//myLog.d("SIZE executing");
 		

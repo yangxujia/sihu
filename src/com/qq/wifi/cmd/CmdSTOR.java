@@ -31,6 +31,7 @@ public class CmdSTOR extends CmdAbstractStore implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		doStorOrAppe(getParameter(input), false);
 	}

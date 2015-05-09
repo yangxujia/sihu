@@ -30,9 +30,6 @@ import java.io.File;
 
 import com.qq.wifi.foregin.SessionThread;
 
-
-import android.util.Log;
-
 public class CmdNLST extends CmdAbstractListing implements Runnable {
 	// The approximate number of milliseconds in 6 months
 	public final static long MS_IN_SIX_MONTHS = 6 * 30 * 24 * 60 * 60 * 1000; 
@@ -44,6 +41,7 @@ public class CmdNLST extends CmdAbstractListing implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		String errString = null;
 		
@@ -104,6 +102,7 @@ public class CmdNLST extends CmdAbstractListing implements Runnable {
 		// have already been handled by sendListing, so we can just quit now.
 	}
 	
+	@Override
 	protected String makeLsString(File file) {
 		if(!file.exists()) {
 			//staticLog.l(Log.INFO, "makeLsString had nonexistent file");

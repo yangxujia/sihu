@@ -12,8 +12,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.bestjiajia.mode.Chat;
-
 public class DataHelper {
 	// 数据库名称
 	private static String DB_NAME = "sihu.db";

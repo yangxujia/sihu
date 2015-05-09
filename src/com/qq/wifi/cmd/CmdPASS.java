@@ -22,10 +22,6 @@ package com.qq.wifi.cmd;
 
 import com.qq.wifi.foregin.SessionThread;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.util.Log;
-
 public class CmdPASS extends FtpCmd implements Runnable {
 	String input;
 	
@@ -37,6 +33,7 @@ public class CmdPASS extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		// User must have already executed a USER command to
 		// populate the Account object's username

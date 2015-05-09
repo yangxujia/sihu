@@ -36,9 +36,7 @@ import org.json.JSONObject;
 
 import com.qq.util.RemoteUtil;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 
 public class ProxyConnector extends Thread {
@@ -82,6 +80,7 @@ public class ProxyConnector extends Thread {
 		Globals.setProxyConnector(this);
 	}
 	
+	@Override
 	public void run() {
 		setProxyState(State.CONNECTING);
 		try {

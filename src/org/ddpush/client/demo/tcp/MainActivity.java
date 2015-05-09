@@ -16,7 +16,6 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -48,6 +47,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		refresher = new Runnable(){
+			@Override
 			public void run(){
 				MainActivity.this.freshCurrentInfo();
 			}
@@ -65,7 +65,8 @@ public class MainActivity extends Activity {
 		friendName.setText(account.getString(Params.FRIEND_NAME, ""));
 		startBtn = (Button)findViewById(R.id.demo_start_button);
 		startBtn.setOnClickListener(new View.OnClickListener() {
-		    public void onClick(View v) {
+		    @Override
+			public void onClick(View v) {
 		    	MainActivity.this.start();
 		    }
 		});
@@ -76,21 +77,24 @@ public class MainActivity extends Activity {
 		targetUserName = (EditText)findViewById(R.id.demo_target_user_name);
 		send0x10Btn = (Button)findViewById(R.id.demo_send_0x10_button);
 		send0x10Btn.setOnClickListener(new View.OnClickListener() {
-		    public void onClick(View v) {
+		    @Override
+			public void onClick(View v) {
 		    	MainActivity.this.send0x10();
 		    	
 		    }
 		});
 		send0x11Btn = (Button)findViewById(R.id.demo_send_0x11_button);
 		send0x11Btn.setOnClickListener(new View.OnClickListener() {
-		    public void onClick(View v) {
+		    @Override
+			public void onClick(View v) {
 		    	MainActivity.this.send0x11();
 		    	
 		    }
 		});
 		send0x20Btn = (Button)findViewById(R.id.demo_send_0x20_button);
 		send0x20Btn.setOnClickListener(new View.OnClickListener() {
-		    public void onClick(View v) {
+		    @Override
+			public void onClick(View v) {
 		    	MainActivity.this.send0x20();
 		    	
 		    }
@@ -351,6 +355,7 @@ public class MainActivity extends Activity {
 			this.uuid = uuid;
 		}
 		
+		@Override
 		public void run(){
 			Pusher pusher = null;
 			Intent startSrv = new Intent(context, OnlineService.class);
@@ -391,6 +396,7 @@ public class MainActivity extends Activity {
 			this.msg = msg;
 		}
 		
+		@Override
 		public void run(){
 			Pusher pusher = null;
 			Intent startSrv = new Intent(context, OnlineService.class);
@@ -431,6 +437,7 @@ public class MainActivity extends Activity {
 			this.msg = msg;
 		}
 		
+		@Override
 		public void run(){
 			Pusher pusher = null;
 			Intent startSrv = new Intent(context, OnlineService.class);

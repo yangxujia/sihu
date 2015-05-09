@@ -24,9 +24,6 @@ import java.io.IOException;
 
 import com.qq.wifi.foregin.SessionThread;
 
-
-import android.util.Log;
-
 public class CmdCWD extends FtpCmd implements Runnable {
 	protected String input;
 	
@@ -35,6 +32,7 @@ public class CmdCWD extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		//myLog.l(Log.DEBUG, "CWD executing");
 		String param = getParameter(input);

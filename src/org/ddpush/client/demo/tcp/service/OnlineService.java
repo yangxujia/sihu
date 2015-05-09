@@ -1,12 +1,7 @@
 package org.ddpush.client.demo.tcp.service;
 
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.ddpush.client.demo.tcp.ChatActivity;
-import org.ddpush.client.demo.tcp.ChatMsgEntity;
-import org.ddpush.client.demo.tcp.ChatMsgViewAdapter;
 import org.ddpush.client.demo.tcp.DateTimeUtil;
 import org.ddpush.client.demo.tcp.MainActivity;
 import org.ddpush.client.demo.tcp.Params;
@@ -29,8 +24,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 public class OnlineService extends Service {

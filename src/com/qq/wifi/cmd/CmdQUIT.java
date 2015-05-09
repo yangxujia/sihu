@@ -22,8 +22,6 @@ package com.qq.wifi.cmd;
 
 import com.qq.wifi.foregin.SessionThread;
 
-import android.util.Log;
-
 public class CmdQUIT extends FtpCmd implements Runnable {
 	public static final String message = "TEMPLATE!!"; 
 	
@@ -31,6 +29,7 @@ public class CmdQUIT extends FtpCmd implements Runnable {
 		super(sessionThread, CmdQUIT.class.toString());
 	}
 	
+	@Override
 	public void run() {
 		//myLog.l(Log.DEBUG, "QUITting");
 		sessionThread.writeString("221 Goodbye\r\n");

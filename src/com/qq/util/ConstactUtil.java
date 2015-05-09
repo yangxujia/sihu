@@ -5,6 +5,7 @@ import java.util.Map;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.provider.BaseColumns;
 import android.provider.ContactsContract;
 
 public class ConstactUtil {
@@ -26,7 +27,7 @@ public class ConstactUtil {
 			do {
 				// 获得联系人的ID号
 				String contactId = c.getString(c
-						.getColumnIndex(ContactsContract.Contacts._ID));
+						.getColumnIndex(BaseColumns._ID));
 				// 获得联系人姓名
 				String name = c
 						.getString(c

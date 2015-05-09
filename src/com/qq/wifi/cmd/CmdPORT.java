@@ -24,9 +24,6 @@ import java.net.UnknownHostException;
 
 import com.qq.wifi.foregin.SessionThread;
 
-
-import android.util.Log;
-
 public class CmdPORT extends FtpCmd implements Runnable {
 	//public static final String message = "TEMPLATE!!";
 	String input;
@@ -36,6 +33,7 @@ public class CmdPORT extends FtpCmd implements Runnable {
 		this.input = input;
 	}
 	
+	@Override
 	public void run() {
 		//myLog.l(Log.DEBUG, "PORT running");
 		String errString = null;
