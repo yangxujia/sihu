@@ -70,7 +70,7 @@ public class MainActivity extends FragmentActivity {
 		mDeynaimic.setOnClickListener(deynaimicOnClickListener);
 		mSetting.setOnClickListener(settingOnClickListener);
 		
-		mNews.performClick();
+		mNews.performClick();//默认模拟点击
 		
 		mPopupWindow=new PopupWindow(mPopView, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, true);
 		

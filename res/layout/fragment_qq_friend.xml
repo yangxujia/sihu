@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
         <com.qq.view.CustomListView
             android:id="@+id/listview"
@@ -31,10 +31,11 @@
         android:layout_width="30.0dip"
         android:layout_height="fill_parent"
         android:layout_alignParentRight="true" />
-    <com.qq.view.LoadingView 
+
+    <com.qq.view.LoadingView
         android:id="@+id/loading"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:visibility="gone"/>
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 </RelativeLayout>

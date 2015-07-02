@@ -87,7 +87,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp">
+                    android:layout_height="50dp" >
 
                     <TextView
                         android:id="@+id/tv_n"
@@ -237,10 +237,11 @@
             <RelativeLayout
                 android:id="@+id/three"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" 
-                android:layout_margin="10dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/two"
-                android:background="@drawable/ll_bg_d">
+                android:layout_margin="10dp"
+                android:background="@drawable/ll_bg_d" >
+
                 <ImageView
                     android:id="@+id/biaoqing"
                     android:layout_width="40dp"
@@ -268,13 +269,14 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/qvip_pay_wallet_icon_arrow_right_normal" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp" 
-                android:layout_margin="10dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/three"
-                android:background="@drawable/ll_bg_d">
+                android:layout_margin="10dp"
+                android:background="@drawable/ll_bg_d" >
+
                 <ImageView
                     android:id="@+id/setting"
                     android:layout_width="40dp"

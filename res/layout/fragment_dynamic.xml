@@ -9,9 +9,9 @@
         android:layout_height="wrap_content" />
 
     <com.qq.view.CustomerScrollView
-        android:layout_below="@+id/title_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar" >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -51,15 +51,16 @@
                     android:contentDescription="@string/app_name"
                     android:scaleType="fitXY"
                     android:src="@drawable/qvip_pay_wallet_icon_arrow_right_normal" />
-                <ImageView 
-                        android:layout_height="30dp"
-                        android:layout_width="30dp"
-                        android:scaleType="fitXY"
-                        android:contentDescription="@string/app_name"
-                        android:layout_toLeftOf="@id/arrow"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/kangyikun"
-                        android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@id/arrow"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/kangyikun" />
             </RelativeLayout>
 
             <LinearLayout
@@ -213,7 +214,6 @@
                         android:contentDescription="@string/app_name"
                         android:scaleType="fitXY"
                         android:src="@drawable/qvip_pay_wallet_icon_arrow_right_normal" />
-                    
                 </RelativeLayout>
             </LinearLayout>
 

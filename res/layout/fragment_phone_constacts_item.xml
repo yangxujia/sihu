@@ -9,32 +9,35 @@
         android:id="@+id/catalog"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="#454545"
+        android:paddingBottom="5dip"
         android:paddingLeft="5dip"
         android:paddingTop="5dip"
-        android:paddingBottom="5dip"/>
-    <LinearLayout 
+        android:textColor="#454545" />
+
+    <LinearLayout
         android:id="@+id/ll_constact"
-        android:layout_height="60dp"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
+        android:layout_height="60dp"
+        android:background="@color/whites"
         android:gravity="center_vertical"
-        android:background="@color/whites">
+        android:orientation="horizontal" >
+
         <ImageView
-            android:id="@+id/icon" 
-            android:layout_height="40dp"
+            android:id="@+id/icon"
             android:layout_width="40dp"
-            android:src="@drawable/h001"
-            android:scaleType="fitXY"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
             android:contentDescription="@string/app_name"
-            android:layout_marginLeft="5dp"/>
-        <TextView 
+            android:scaleType="fitXY"
+            android:src="@drawable/h001" />
+
+        <TextView
             android:id="@+id/title"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:textColor="#336598"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:textSize="18sp"/>
+            android:textColor="#336598"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>

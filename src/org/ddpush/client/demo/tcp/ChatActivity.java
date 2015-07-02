@@ -65,7 +65,7 @@ public class ChatActivity extends Activity implements OnClickListener{
         setContentView(R.layout.chat);
          username = getIntent().getExtras().getString("username");
          friendName = getIntent().getExtras().getString("friendName");
-//         Toast.makeText(this.getApplicationContext(), username+"___"+friendName, Toast.LENGTH_SHORT).show();
+         Toast.makeText(this.getApplicationContext(), username+"___"+friendName, Toast.LENGTH_SHORT).show();
         //启动activity时不自动弹出软键盘
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN); 
         initView();
@@ -110,6 +110,7 @@ public class ChatActivity extends Activity implements OnClickListener{
 		dh.createTable(friendName); 
 		dh.Close();
         Cursor cur = db.query("chat_"+friendName, new String[]{"id","createTime","message","flag"}, null,null, "id", null, null);
+        ((TextView)findViewById(R.id.textViewFriendName)).setText(friendName);
         while(cur.moveToNext()){
             long createTime=cur.getLong(cur.getColumnIndex("createTime"));
             SimpleDateFormat dateFormat = new SimpleDateFormat(
@@ -128,7 +129,6 @@ public class ChatActivity extends Activity implements OnClickListener{
     			entity.setName(username);
     			entity.setMsgType(false);
     		}
-    		((TextView)findViewById(R.id.textViewFriendName)).setText(friendName);
     		entity.setText(message);
     		mDataArrays.add(entity);
         }

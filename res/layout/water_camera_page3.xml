@@ -1,59 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" 
-    android:alpha="0.8">
-    <LinearLayout 
-        android:layout_height="wrap_content"
+    android:layout_height="wrap_content"
+    android:alpha="0.8" >
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp">
-        <TextView 
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical" >
+
+        <TextView
             android:id="@+id/two_address"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="@string/camera_address"
             android:textColor="@android:color/white"
             android:textSize="36sp"
-            android:text="@string/camera_address"
-            android:textStyle="bold"/>
-        <RelativeLayout 
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-            <TextView 
-                android:layout_height="wrap_content"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:layout_marginLeft="20sp"
                 android:text="@string/camera_tep"
-                android:layout_marginLeft="20sp"/>
-            <TextView 
-                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
+
+            <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
+                android:text="@string/camera_pm"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:text="@string/camera_pm"/>
+                android:textSize="20sp" />
         </RelativeLayout>
-        <View 
-            android:layout_height="2dp"
+
+        <View
             android:layout_width="match_parent"
-            android:background="#ccc"
+            android:layout_height="2dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
-        <TextView 
-            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="#ccc" />
+
+        <TextView
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:gravity="center_vertical"
+            android:text="@string/camera_day_hour"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:text="@string/camera_day_hour"/>
+            android:textSize="20sp" />
     </LinearLayout>
 
 </RelativeLayout>

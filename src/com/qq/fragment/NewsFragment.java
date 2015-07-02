@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.ddpush.client.demo.tcp.ChatActivity;
+import org.ddpush.client.demo.tcp.MainActivity;
+
 import com.qq.AsyncTaskBase;
 import com.qq.R;
 import com.qq.adapter.NewsAdapter;
@@ -13,12 +16,16 @@ import com.qq.view.CustomListView;
 import com.qq.view.CustomListView.OnRefreshListener;
 import com.qq.view.LoadingView;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 public class NewsFragment extends Fragment {
 	private static final String TAG = "NewsFragment";
@@ -29,7 +36,7 @@ public class NewsFragment extends Fragment {
 	private View mSearchView;
 	private NewsAdapter adapter;
 	private LinkedList<RecentChat> chats = new LinkedList<RecentChat>();
-
+	List<RecentChat> recentChats = new ArrayList<RecentChat>();
 
 
 	@Override
@@ -53,7 +60,26 @@ public class NewsFragment extends Fragment {
 	private void init() {
 		adapter = new NewsAdapter(mContext, chats, mCustomListView);
 		mCustomListView.setAdapter(adapter);
+//加入点击事件
+		mCustomListView.setOnItemClickListener(new OnItemClickListener(){
 
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				RecentChat recentChat = null;
+				if(arg2>=2){
+					recentChat = recentChats.get(arg2-2);
+					Toast.makeText(mContext, recentChat.getUserName()+" ||"+recentChat.getUserFeel()+" || "+recentChat.getUserTime()+"||"+recentChat.getImgPath() , Toast.LENGTH_LONG).show();
+				}
+				Intent intent = new Intent();
+				intent.putExtra("friendName",  recentChat.getUserName());
+				intent.putExtra("username", "yangxujia");
+				intent.setClass(mContext,ChatActivity.class);
+				startActivity(intent);
+			}
+			
+		});
+		
 		mCustomListView.addHeaderView(mSearchView);
 		mCustomListView.setOnRefreshListener(new OnRefreshListener() {
 			@Override
@@ -66,7 +92,7 @@ public class NewsFragment extends Fragment {
 	}
 
 	private class NewsAsyncTask extends AsyncTaskBase {
-		List<RecentChat> recentChats = new ArrayList<RecentChat>();
+		
 
 		public NewsAsyncTask(LoadingView loadingView) {
 			super(loadingView);

@@ -10,12 +10,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="14.0dip"
-        android:scaleType="fitXY"
-        android:src="@drawable/qb_down"
         android:contentDescription="@string/app_name"
-        android:layout_centerVertical="true"/>
-
+        android:scaleType="fitXY"
+        android:src="@drawable/qb_down" />
 
     <TextView
         android:id="@+id/group_name"

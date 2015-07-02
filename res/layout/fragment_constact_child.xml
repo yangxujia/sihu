@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/list_group_item_background"
     android:paddingBottom="6.0dip"
-    android:paddingTop="6.0dip" 
-    android:background="@drawable/list_group_item_background">
+    android:paddingTop="6.0dip" >
 
     <ImageView
         android:id="@+id/icon"
@@ -13,18 +13,18 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10.0dip"
-        android:src="@drawable/ic_launcher"
-        android:contentDescription="@string/app_name" 
-        android:scaleType="fitXY"/>
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher" />
 
     <ImageView
         android:id="@+id/stateicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/icon"
-        android:layout_alignRight="@id/icon" 
-        android:src="@drawable/status_online"
-        android:contentDescription="@string/app_name"/>
+        android:layout_alignRight="@id/icon"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/status_online" />
 
     <TextView
         android:id="@+id/contact_list_item_name"

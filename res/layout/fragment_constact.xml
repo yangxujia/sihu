@@ -10,20 +10,21 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent" >
     -->
 
     <include
         android:id="@+id/search"
         layout="@layout/common_search_x" />
-    <TextView 
+
+    <TextView
         android:id="@+id/tv"
-        android:layout_below="@id/search"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/friend_group"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search"
         android:layout_margin="5dp"
-        android:textColor="@color/gray"/>
+        android:text="@string/friend_group"
+        android:textColor="@color/gray" />
 
     <com.qq.view.IphoneTreeView
         android:id="@+id/iphone_tree_view"
@@ -42,7 +43,7 @@
         android:visibility="gone" />
     <!--
              </RelativeLayout>
-    </com.qq.view.CustomerScrollView>
+    </com.qq.view.CustomerScrollView>
     -->
 
 </RelativeLayout>

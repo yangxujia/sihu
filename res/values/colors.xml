@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="devide_line">#CBCED2</color>
     <color name="blue">#499BF7</color>
     <color name="whites">#ffffff</color>
@@ -21,7 +22,6 @@
     <color name="result_view">#b0000000</color>
     <color name="gray">#AFAFAF</color>
     <color name="yellow">#F99503</color>
-    
     <color name="orange">#ff9900</color>
     <color name="deepcolor">#faaa5f</color>
     <color name="shadowcolor">#333333</color>
@@ -33,4 +33,5 @@
 
     <color name="remote_connect_text">#FFe78018</color>
     <color name="remote_disconnect_text">#FF901821</color>
+
 </resources>

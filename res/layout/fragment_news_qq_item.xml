@@ -6,31 +6,30 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp">
+        android:layout_height="65dp" >
 
         <ImageView
             android:id="@+id/user_picture"
-            android:layout_height="50dp"
             android:layout_width="50dp"
-            android:background="@drawable/login_picture_bg"
-            android:contentDescription="@string/app_name"
+            android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
+            android:background="@drawable/login_picture_bg"
+            android:contentDescription="@string/app_name"
             android:scaleType="fitXY"
-            android:src="@drawable/h001"/>
+            android:src="@drawable/h001" />
 
-
-            <TextView
-                android:id="@+id/user_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:text="@string/user_name"
-                android:textSize="20sp" 
-                android:layout_toRightOf="@id/user_picture"
-                android:layout_marginLeft="10dp"
-                android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/user_picture"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/user_name"
+            android:textSize="20sp" />
     </RelativeLayout>
 
 </RelativeLayout>

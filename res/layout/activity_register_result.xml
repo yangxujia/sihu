@@ -3,61 +3,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <com.qq.view.TitleBarView 
+
+    <com.qq.view.TitleBarView
         android:id="@+id/title_bar"
-        android:layout_height="60dp"
-        android:layout_width="match_parent"/>
-    <TextView 
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:gravity="center_horizontal"
-        android:textSize="16sp"
-        android:textColor="@color/gray_font"
         android:text="@string/tv_思乎"
-        android:layout_marginTop="80dp"/>
-    
-    <TextView 
-        android:layout_height="wrap_content"
+        android:textColor="@color/gray_font"
+        android:textSize="16sp" />
+
+    <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:textSize="30sp"
         android:text="@string/tv_思乎_number"
-        android:layout_marginTop="20dp"/>
-    
-    <LinearLayout 
-        android:layout_height="wrap_content"
+        android:textSize="30sp" />
+
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-        <CheckBox 
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <CheckBox
             android:id="@+id/ck_agreen"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/checkbox"
             android:button="@null"
-            android:checked="true"/>
-        <TextView 
-            android:layout_height="wrap_content"
+            android:checked="true" />
+
+        <TextView
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:text="@string/tv_register_result"
             android:textColor="@color/gray_font"
-            android:layout_marginLeft="5dp"
-            android:textSize="16sp"/>
-        <com.qq.view.TextURLView 
+            android:textSize="16sp" />
+
+        <com.qq.view.TextURLView
             android:id="@+id/tv_tiaokuan"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
-    
-    <Button 
+
+    <Button
         android:id="@+id/register_success"
-        android:layout_height="60sp"
         android:layout_width="match_parent"
+        android:layout_height="60sp"
         android:layout_margin="20dp"
         android:background="@drawable/login_btn"
+        android:text="@string/register_success"
         android:textColor="@color/whites"
-        android:textSize="16sp"
-        android:text="@string/register_success"/>
+        android:textSize="16sp" />
+
 </LinearLayout>
