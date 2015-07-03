@@ -1,22 +1,18 @@
 package com.qq.fragment;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.ddpush.client.demo.tcp.ChatActivity;
-import org.ddpush.client.demo.tcp.MainActivity;
+import org.ddpush.client.demo.tcp.ChatMsgViewAdapter;
+import org.ddpush.client.demo.tcp.News;
 
-import com.qq.AsyncTaskBase;
-import com.qq.R;
-import com.qq.adapter.NewsAdapter;
-import com.qq.bean.RecentChat;
-import com.qq.test.TestData;
-import com.qq.view.CustomListView;
-import com.qq.view.CustomListView.OnRefreshListener;
-import com.qq.view.LoadingView;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -26,6 +22,17 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
+
+import com.bestjiajia.database.SqliteHelper;
+import com.qq.AsyncTaskBase;
+import com.qq.R;
+import com.qq.adapter.NewsAdapter;
+import com.qq.bean.RecentChat;
+import com.qq.test.TestData;
+import com.qq.util.MyPreference;
+import com.qq.view.CustomListView;
+import com.qq.view.CustomListView.OnRefreshListener;
+import com.qq.view.LoadingView;
 
 public class NewsFragment extends Fragment {
 	private static final String TAG = "NewsFragment";
@@ -37,6 +44,7 @@ public class NewsFragment extends Fragment {
 	private NewsAdapter adapter;
 	private LinkedList<RecentChat> chats = new LinkedList<RecentChat>();
 	List<RecentChat> recentChats = new ArrayList<RecentChat>();
+	private String username;
 
 
 	@Override
@@ -60,6 +68,9 @@ public class NewsFragment extends Fragment {
 	private void init() {
 		adapter = new NewsAdapter(mContext, chats, mCustomListView);
 		mCustomListView.setAdapter(adapter);
+		//取出已保存用户名
+		username = MyPreference.getInstance(mContext)  
+                .getLoginName();
 //加入点击事件
 		mCustomListView.setOnItemClickListener(new OnItemClickListener(){
 
@@ -73,7 +84,7 @@ public class NewsFragment extends Fragment {
 				}
 				Intent intent = new Intent();
 				intent.putExtra("friendName",  recentChat.getUserName());
-				intent.putExtra("username", "yangxujia");
+				intent.putExtra("username", username);
 				intent.setClass(mContext,ChatActivity.class);
 				startActivity(intent);
 			}
@@ -98,10 +109,33 @@ public class NewsFragment extends Fragment {
 			super(loadingView);
 		}
 
+		//加载测试数据
 		@Override
 		protected Integer doInBackground(Integer... params) {
 			int result = -1;
-			recentChats = TestData.getRecentChats();
+			//从本地数据库加载数据
+			SqliteHelper helper=new SqliteHelper(mContext, "sihu.db", 5);
+	        SQLiteDatabase db=helper.getReadableDatabase();
+	        Cursor cur = db.rawQuery("select * from news orderby time desc", null);
+	        while(cur.moveToNext()){
+	            long createTime=cur.getLong(cur.getColumnIndex("time"));
+	            SimpleDateFormat dateFormat = new SimpleDateFormat(
+	    				"yyyy-MM-dd HH:mm");
+	            String createTimeStr = dateFormat.format(createTime).toString();
+	            String message=cur.getString(cur.getColumnIndex("message"));
+	            String name=cur.getString(cur.getColumnIndex("name"));
+	            String picPath=cur.getString(cur.getColumnIndex("picPath"));
+//	        	Toast.makeText(getApplicationContext(), id+" "+createTimeStr+" "+message+" "+flag, Toast.LENGTH_LONG).show();
+	    		News news = new News();
+	    		news.setName(name);
+	    		news.setMessage(message);
+	    		news.setPicPath(picPath);
+	    		news.setTime(createTimeStr);
+	    		RecentChat  recentChat = new RecentChat(name, message, createTimeStr, picPath);
+	    		recentChats.add(recentChat);
+	    }
+	       //去掉测试数据
+			//recentChats = TestData.getRecentChats();
 			if (recentChats.size() > 0) {
 				result = 1;
 			}

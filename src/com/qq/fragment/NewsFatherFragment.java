@@ -1,5 +1,7 @@
 package com.qq.fragment;
 
+import com.bestjiajia.database.DataHelper;
+import com.bestjiajia.database.SqliteHelper;
 import com.qq.R;
 import com.qq.activity.ErcodeScanActivity;
 import com.qq.activity.WaterCameraActivity;
@@ -8,6 +10,7 @@ import com.qq.view.TitleBarView;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -51,6 +54,8 @@ public class NewsFatherFragment extends Fragment {
 	}
 	
 	private void init(){
+		
+		
 		mTitleBarView.setCommonTitle(View.GONE, View.GONE, View.VISIBLE,
 				View.VISIBLE);
 		mTitleBarView.setBtnRight(R.drawable.skin_conversation_title_right_btn);
@@ -80,7 +85,7 @@ public class NewsFatherFragment extends Fragment {
 		final NewsFragment newsFragment=new NewsFragment();
 		final CallFragment callFragment=new CallFragment();
 		
-		//左边按钮
+		//左边消息按钮
 		mTitleBarView.getTitleLeft().setOnClickListener(new OnClickListener() {
 			@SuppressLint("NewApi")
 			@Override

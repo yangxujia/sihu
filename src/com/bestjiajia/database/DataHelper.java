@@ -74,6 +74,18 @@ public class DataHelper {
      			); 
 	}
 
+	//普通的创建表方法，将sql开放到外面
+	public void createNewsTable() {
+        db.execSQL(
+        		"CREATE TABLE IF NOT EXISTS news"  
+     			+"(id integer primary key,"+  
+     			 " name varchar,"+  
+     			 " message text,"+  
+     			 " time integer ,"+  
+     			 " picPath integer"+
+     			")" 
+     			); 
+	}
 	// 判断users表中的是否包含某个UserID的记录
 //	public Boolean HaveChat(String userId) {
 //		Boolean b = false;

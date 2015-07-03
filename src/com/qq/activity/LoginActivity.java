@@ -1,9 +1,5 @@
 package com.qq.activity;
 
-import com.qq.MainActivity;
-import com.qq.R;
-import com.qq.view.TextURLView;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +9,13 @@ import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
+
+import com.qq.MainActivity;
+import com.qq.R;
+import com.qq.util.MyPreference;
+import com.qq.view.TextURLView;
 
 public class LoginActivity extends Activity {
 
@@ -22,6 +24,7 @@ public class LoginActivity extends Activity {
 	private Button mLogin;
 	private Button register;
 	private TextURLView mTextViewURL;
+	private EditText username;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,6 +40,7 @@ public class LoginActivity extends Activity {
 		mLogin=(Button) findViewById(R.id.login);
 		register=(Button) findViewById(R.id.register);
 		mTextViewURL=(TextURLView) findViewById(R.id.tv_forget_password);
+		username = (EditText)findViewById(R.id.account);
 	}
 
 	private void init(){
@@ -46,6 +50,7 @@ public class LoginActivity extends Activity {
 		
 		mLogin.setOnClickListener(loginOnClickListener);
 		register.setOnClickListener(registerOnClickListener);
+		
 	}
 	
 	private void initTvUrl(){
@@ -56,6 +61,7 @@ public class LoginActivity extends Activity {
 		
 		@Override
 		public void onClick(View v) {
+			MyPreference.getInstance(mContext).SetLoginName(username.getText().toString().trim());
 			Intent intent=new Intent(mContext,MainActivity.class);
 			startActivity(intent);
 			finish();

@@ -3,6 +3,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
+import com.bestjiajia.database.SqliteHelper;
 import com.qq.bean.RecentChat;
 import com.qq.util.FileUtil;
 

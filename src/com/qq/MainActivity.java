@@ -1,5 +1,6 @@
 package com.qq;
 
+import com.bestjiajia.database.DataHelper;
 import com.qq.activity.LoginActivity;
 import com.qq.fragment.ConstactFatherFragment;
 import com.qq.fragment.DynamicFragment;
@@ -69,9 +70,14 @@ public class MainActivity extends FragmentActivity {
 		mConstact.setOnClickListener(constactOnClickListener);
 		mDeynaimic.setOnClickListener(deynaimicOnClickListener);
 		mSetting.setOnClickListener(settingOnClickListener);
-		
+		//初始话，创建消息表
+		//查询数据库中的聊天记录
+        
+        DataHelper dh = new DataHelper(mContext);
+		dh.createNewsTable(); 
+		dh.Close();
 		mNews.performClick();//默认模拟点击
-		
+		//根据用户名
 		mPopupWindow=new PopupWindow(mPopView, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, true);
 		
 		app_cancle.setOnClickListener(new OnClickListener() {
